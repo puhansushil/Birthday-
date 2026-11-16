@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Happy Birthday Rashmi ✨</title>
+<title>Happy Birthday Rashmi 笨ｨ</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -47,13 +47,50 @@
 
   /* left panel: message & cake & buttons */
   .left{padding:6px}
-  .cake{width:240px;height:160px;margin:18px auto 6px;background:linear-gradient(to bottom,#ff9ff3,#e84393);
-    border-radius:50% 50% 25% 25%;position:relative;box-shadow:0 12px 30px rgba(0,0,0,.35);animation:wiggle 3s ease-in-out infinite}
-  @keyframes wiggle{0%,100%{transform:rotate(0)}50%{transform:rotate(2deg)}}
-  .candles{position:absolute;top:-40px;left:50%;transform:translateX(-50%);display:flex;gap:16px}
-  .candle{width:10px;height:45px;background:#fff;border-radius:5px;position:relative;box-shadow:0 0 10px #fff}
-  .flame{width:16px;height:22px;background:radial-gradient(circle,#ffdd59,#ff6b6b,#ffa502);border-radius:50%;position:absolute;top:-22px;left:50%;transform:translateX(-50%);animation:flicker 1.2s infinite alternate}
-  @keyframes flicker{0%{transform:translateX(-50%) scale(1);opacity:1}100%{transform:translateX(-50%) scale(1.12);opacity:.85}}
+
+  /* 🎂 PREMIUM DOUBLE DECKER CAKE STYLE 🎂 */
+  .cake {
+    width: 240px; height: 180px; margin: 40px auto 20px; position: relative;
+    animation: wiggle 3s ease-in-out infinite;
+  }
+  @keyframes wiggle { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(2deg); } }
+  
+  .cake-tier {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    border-radius: 10px 10px 6px 6px;
+    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.4);
+  }
+  
+  /* Big Bottom Layer */
+  .cake-bottom {
+    bottom: 0; width: 240px; height: 95px;
+    background: linear-gradient(135deg, #e84393, #fd79a8); 
+  }
+  .cake-bottom::after { 
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 25px;
+    background: #ffffff; border-radius: 10px 10px 20px 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  /* Top Layer */
+  .cake-top {
+    bottom: 95px; width: 160px; height: 85px;
+    background: linear-gradient(135deg, #48dbfb, #0abde3); 
+  }
+  .cake-top::after { 
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 20px;
+    background: #ffffff; border-radius: 10px 10px 15px 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .candles { position: absolute; top: -45px; left: 50%; transform: translateX(-50%); display: flex; gap: 20px; z-index: 2; }
+  .candle { width: 12px; height: 48px; background: #fff; border-radius: 6px; position: relative; box-shadow: 0 0 12px #fff; }
+  .flame {
+    width: 18px; height: 24px; background: radial-gradient(circle, #ffdd59, #ff6b6b, #ffa502);
+    border-radius: 50%; position: absolute; top: -24px; left: 50%; transform: translateX(-50%);
+    animation: flicker 1.2s infinite alternate;
+  }
+  @keyframes flicker { 0% { transform: translateX(-50%) scale(1); opacity: 1; } 100% { transform: translateX(-50%) scale(1.15); opacity: .85; } }
 
   .controls{display:flex;gap:14px;justify-content:center;margin-top:12px}
   .btn{padding:12px 20px;border-radius:40px;border:none;font-weight:700;cursor:pointer;background:linear-gradient(45deg,#ff6b81,#feca57);box-shadow:0 8px 22px rgba(0,0,0,.25);color:#fff;transition:transform .2s}
@@ -119,15 +156,19 @@
 <div class="stage" id="stage">
   <div class="card" role="region" aria-label="Birthday card for Rashmi">
     <div class="left">
-      <h1>Happy Birthday Rashmi😍</h1>
+      <h1>Happy Birthday Rashmi 笨ｨ</h1>
       <p class="lead">May your day sparkle like fireworks and be filled with love. Click anywhere for a confetti surprise!</p>
 
+      <!-- 🎂 DOUBLE DECKER CAKE HTML 🎂 -->
       <div class="cake" aria-hidden="true">
-        <div class="candles">
-          <div class="candle"><div class="flame"></div></div>
-          <div class="candle"><div class="flame"></div></div>
-          <div class="candle"><div class="flame"></div></div>
+        <div class="cake-tier cake-top">
+          <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+          </div>
         </div>
+        <div class="cake-tier cake-bottom"></div>
       </div>
 
       <div class="controls">
